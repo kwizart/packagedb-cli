@@ -985,8 +985,6 @@ def main():
     pkgdbclient.insecure = arg.insecure
 
     if arg.bzurl != pkgdb2client.BZ_URL:
-        if not arg.bzurl.endswith('xmlrpc.cgi'):
-            arg.bzurl = '%s/xmlrpc.cgi' % arg.bzurl
         print("Querying bugzilla at: %s" % arg.bzurl)
         utils._get_bz(arg.bzurl, insecure=arg.insecure)
 
