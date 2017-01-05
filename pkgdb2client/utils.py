@@ -43,7 +43,7 @@ BZCLIENT = None
 def _get_bz(url=pkgdb2client.BZ_URL, insecure=False):
     ''' Return a bugzilla object. '''
     global BZCLIENT
-    if not BZCLIENT or BZCLIENT.url != url:
+    if not BZCLIENT:
         BZCLIENT = Bugzilla(url=url)
 
     BZCLIENT._sslverify = not insecure
